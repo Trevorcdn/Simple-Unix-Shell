@@ -20,7 +20,7 @@
    a)writes 'Hello World!' onto the testfile
 2) echo "hack">/home/trevor/p1/SimpleShell/testfile
    a)writes 'hack' onto testfile that is in the directory of /home/trevor/p1/SimpleShell/
-3) check lecture syscalls.pdf page 22
+3) check syscalls.pdf page 22
    a) write(STDOUT_FILENO, "some type of message\n", [message length]);
    b) Actually, might want to use dup2() instead of write ^
 
