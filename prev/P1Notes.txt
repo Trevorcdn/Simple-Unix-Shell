@@ -1,0 +1,38 @@
+~~~~~~~~~~~~~~~~~~phase 4~~~~~~~~~~~~`
+1) Dealing with cd
+    piazza said to use chdir() but it doesn't have to be in the child function. Separate thingy?
+    Cases might have to deal with:
+        a) cd ..
+        b) cd /home/example
+        c) cd toto
+            i) this should not work if there is no directory named toto
+2)pwd already seems to work(?)
+3)exit and pwd have 0 args
+4)cd has exactly 1 args
+
+~~~~~~~~~~~~~~~~~~phase 5~~~~~~~~~~~~
+1)cat file
+  a)prints out what texts/infomations is on file
+
+
+~~~~~~~~~~~~~~~~~~phase 6~~~~~~~~~~~~
+1) echo "Hello World!">testfile
+   a)writes 'Hello World!' onto the testfile
+2) echo "hack">/home/trevor/p1/SimpleShell/testfile
+   a)writes 'hack' onto testfile that is in the directory of /home/trevor/p1/SimpleShell/
+3) check lecture syscalls.pdf page 22
+   a) write(STDOUT_FILENO, "some type of message\n", [message length]);
+   b) Actually, might want to use dup2() instead of write ^
+
+4) Pseudo-code - check out test2.c in Extra folder - PUT THE CODE IN THE CHILD fork-exe-wait 
+      /*someTextFile.txt is the argument after the > and before '/0'*/
+      int filedesc = open("someTextFile.txt", O_WRONLY | OAPPEND);
+      /*have something here to check if the file exist or if it can be open*/
+      dup2(fd);
+      close(fd);
+5)make sure to take cases like "echo >" with "Error: no output file"
+
+after parse check if "grep = shArg[0] and < = shArg[1]" and have it turn a bit dirty for printing problem
+
+/home/workspace/Extra/dir/test.txt
+echo hello world! > /home/workspace/Extra/dir/test.txt
