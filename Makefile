@@ -1,6 +1,6 @@
   
 sshell: sshell.c
-	gcc -o sshell sshell.c -Wall -Werror 
+	gcc -std=c99 -o sshell sshell.c -Wall -Werror 
 
 clean:
 	rm sshell
